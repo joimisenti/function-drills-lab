@@ -393,15 +393,28 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 function ascending(array) {
-  for(let i = 0; i < array.length - 1; i++) {
-    for(let j = i + 1; j < array.length; j++) {
-      if(array[i] < array[j]) {
-        return false
-      }
+  let comparison = array[0]
+  for(let i = 1; i < array.length - 1; i++) {
+    if(array[i] <= comparison) {
+      return false
+    } else {
+      comparison = array[i]
     }
-  }
+  } 
   return true
 }
+
+
+// function ascending(array) {
+//   for(let i = 0; i < array.length - 1; i++) {
+//     for(let j = i + 1; j < array.length; j++) {
+//       if(array[i] < array[j]) {
+//         return false
+//       }
+//     }
+//   }
+//   return true
+// }
 
 //     if(array[i + 1] > array[i]) {
 //       return true
@@ -422,12 +435,8 @@ function bathroom() {
   let rubberDuck = "squeaky";
   function bathtub() {
     let sailorDuck = "nautical";
-    console.log(duck)
   }
 }
-
-let checkDuck = bathroom()
-console.log(checkDuck)
 
 function pond() {
   let realDuck = "fluffy";
@@ -446,7 +455,7 @@ let globalScope = ["duck"]
 let bathroomScope = ["duck", "rubberDuck"]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = ["duck", "sailorDuck"]
+let bathtubScope = ["duck", "sailorDuck", "rubberDuck"]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
 let pondScope = ["duck", "realDuck"]
